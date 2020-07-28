@@ -20,7 +20,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a6f2357-7058-440c-9714-481ec26eb816" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/microservices/orders.py" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/orders.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/Dockerfile" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/Dockerfile" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/microservices/orders/requirements.txt" beforeDir="false" afterPath="$PROJECT_DIR$/microservices/requirements.txt" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -60,13 +62,17 @@
   <component name="PropertiesComponent">
     <property name="SHARE_PROJECT_CONFIGURATION_FILES" value="true" />
     <property name="WebServerToolWindowFactoryState" value="false" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/microservices" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/microservices/orders" />
     <property name="nodejs_interpreter_path.stuck_in_default_project" value="undefined stuck path" />
     <property name="nodejs_npm_path_reset_for_default_project" value="true" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/microservices" />
+    </key>
     <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/microservices/orders" />
       <recent name="$PROJECT_DIR$/microservices" />
       <recent name="$PROJECT_DIR$" />
     </key>
