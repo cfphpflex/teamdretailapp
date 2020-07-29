@@ -20,15 +20,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="4a6f2357-7058-440c-9714-481ec26eb816" name="Default Changelist" comment="">
-      <change afterPath="$PROJECT_DIR$/microservices/static/css/ui.css" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/static/images/placeholder.png" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/templates/base.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/templates/confirm.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/templates/item_details.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/templates/item_entry_form.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/templates/item_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/templates/order_list.html" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/microservices/templates/user_list.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/main.py" beforeDir="false" afterPath="$PROJECT_DIR$/main.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -75,6 +68,7 @@
   </component>
   <component name="RecentsManager">
     <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/microservices/orders" />
       <recent name="$PROJECT_DIR$/microservices" />
     </key>
     <key name="CopyFile.RECENT_KEYS">
@@ -116,5 +110,6 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
 </project>

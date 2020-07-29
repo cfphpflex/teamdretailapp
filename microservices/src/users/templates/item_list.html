@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+{% block home %}active{% endblock %}
+{% block content %}
+<div class="row">
+  <aside class="col-md-12">
+    <output>
+      {% for item in items %}
+      <article class="card card-product-list mb-4">
+        <div class="card-body">
+          <div class="row">
+            <aside class="col-sm-3">
+              {% if item.images %}
+              <a href="/item/detail/{{item.id}}" class="img-wrap"><img src="{{item.images[0]}}"></a>
+              {% else %}
+              <a href="/item/detail/{{item.id}}" class="img-wrap"><img
+                  src="{{ url_for('static', filename='placeholder.png') }}"></a>
+              {% endif %}
+            </aside> <!-- col.// -->
+            <article class="col-sm-6">
+              <a href="/item/detail/{{item.id}}" class="title mt-2 h5">{{item.product_title}}</a>
+              <div class="mb-3">
+                <small class="text-muted">By {{item.manufacturer}}</small>
+              </div>
+              <main>
+                <p>{{item.description}}</p>
+              </main>
+            </article> <!-- col.// -->
+            <aside class="col-sm-3">
+              <div class="price-wrap mt-2">
+                <span class="price h5"> ${{item.price}} </span>
+
+              </div> <!-- info-price-detail // -->
+
+              <p class="small text-success"> Free shipping </p>
+              <br>
+              <p>
+                <a href="/confirm/{{item.id}}" class="btn btn-primary">Order</a>
+                <a href="/item/detail/{{item.id}}" class="btn btn-light"> Details </a>
+              </p>
+              <br>
+              <a href="#" class="small"><i class="fa fa-heart"></i> Add to wishlist</a>
+            </aside> <!-- col.// -->
+          </div> <!-- row.// -->
+        </div> <!-- card-body .// -->
+      </article>
+      {% else %}
+      <p>No Items found</p>
+      {% endfor %}
+    </output>
+  </aside>
+  {% if last_item_id %}
+  <nav>
+    <ul class="pager">
+      <li><a href="?start_after={{last_item_id}}">More</a></li>
+    </ul>
+  </nav>
+  {% endif %}
+</div>
+{% endblock %}

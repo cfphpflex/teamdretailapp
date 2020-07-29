@@ -1,0 +1,59 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<form class="row section-components padding-y mt-3" method="POST" enctype="multipart/form-data">
+    <aside class="col-md-9">
+        <div class="form-group">
+            <label for="first_name">First Name</label>
+            <input type="text" name="first_name" id="first_name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="last_name">Last Name</label>
+            <input type="text" name="last_name" id="last_name" class="form-control" />
+        </div>
+
+        <div class="form-group">
+            <label for="email">Email</label>
+            <input type="text" name="email" id="email" class="form-control" />
+        </div>
+
+    </aside>
+    <aside class="col-md-3">
+
+        <figure class="card card-product-grid">
+            <div class="img-wrap">
+                <span class="topbar">
+                    <span class="badge badge-success"> Free </span>
+                </span>
+                <img src="{{item.images[0]}}">
+            </div>
+            <figcaption class="info-wrap border-top">
+                <a href="#" class="title">{{item.product_title}}</a>
+                <div class="row mt-2">
+
+
+                    <aside class="price-wrap col-md-5">
+                        <span class="price">$0.00</span>
+                        <small class="price-old">${{item.price}}</small>
+                    </aside> <!-- price-wrap.// -->
+                    <aside class="form-group col-md-5 flex-grow-0">
+                        <label for="units">Quantity</label>
+                        <div class="input-group">
+
+                            <input type="number" id="units" name="units" class="form-control" value="1" step="1">
+
+                        </div>
+                    </aside>
+                </div>
+            </figcaption>
+
+        </figure> <!-- card // -->
+        <button type="submit" class="btn btn-primary">Place Order</button>
+
+    </aside>
+</form>
+
+{% endblock %}
