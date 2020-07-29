@@ -15,6 +15,7 @@ app.config.update(
 app.debug = False
 app.testing = False
 
+# ***MICROSERVICE #1: "ADD ITEMS"  ***
 
 @app.route("/items/add", methods=['GET', 'POST'])
 def add_item():
@@ -31,6 +32,9 @@ def add_item():
 
     return render_template("item_entry_form.html", action='Add', item={})
 
+
+# ***MICROSERVICE #2: "CONFIRM ITEM ID"  ***
+
 @app.route("/confirm/<item_id>", methods=['GET', 'POST'])
 def confirm_item(item_id):
     item = firestore.read(item_id)
@@ -46,6 +50,7 @@ def confirm_item(item_id):
             "last_name": data.get("last_name"),
             "email": data.get("email"),
         }
+         
         user = firestore.create_user(user_data)
         order_data = {
             "item_id": item.get("id"),
@@ -56,20 +61,32 @@ def confirm_item(item_id):
         return redirect(url_for('.list_items'))
     return render_template("confirm.html", item=item)
 
+
+# ***MICROSERVICE #3: "ITEM DETAIL"  ***
+
 @app.route("/item/detail/<item_id>")
 def item_detail(item_id):
     item = firestore.read(item_id)
     return render_template('item_details.html', item=item)
+
+
+# ***MICROSERVICE #4: "ORDERS"  ***
 
 @app.route("/orders")
 def list_orders():
     orders = firestore.list_collection(u'Order')
     return render_template("order_list.html", orders=orders)
 
+
+# ***MICROSERVICE #5: "List of USERS"  ***
+
 @app.route("/users")
 def list_users():
     users = firestore.list_collection(u'User')
     return render_template("user_list.html", users=users)
+
+
+# ***MICROSERVICE #6: "List of Items"  ***
 
 @app.route("/")
 def list_items():
@@ -80,6 +97,10 @@ def list_items():
 # Add an error handler that reports exceptions to Stackdriver Error
 # Reporting. Note that this error handler is only used when debug
 # is False
+
+
+# ***MICROSERVICE #7: "ERROR HANDLDER"  ***
+
 @app.errorhandler(500)
 def server_error(e):
     client = error_reporting.Client()
