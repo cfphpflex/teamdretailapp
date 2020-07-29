@@ -1,0 +1,63 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+
+<div class="card mt-5">
+  <div class="row no-gutters">
+    <aside class="col-md-6">
+      <article class="gallery-wrap">
+        {% if item.images %}
+        <div class="img-big-wrap mt-3">
+          <div> <a href="#"><img src="{{item.images[0]}}"></a></div>
+        </div> <!-- slider-product.// -->
+        <div class="thumbs-wrap">
+          {% for image in item.images%}
+          <a href="" class="item-thumb"> <img src="{{image}}"></a>
+          {% endfor %}
+        </div>
+        {% else %}
+        <div class="img-big-wrap mt-3">
+          <div> <a href="#"><img src="{{ url_for('static', filename='placeholder.png') }}"></a></div>
+        </div>
+        {% endif %}
+      </article> <!-- gallery-wrap .end// -->
+    </aside>
+    <main class="col-md-6 border-left">
+      <article class="content-body">
+        <h2 class="title">{{item.product_title}}</h2>
+        <div class="my-3">
+          <small class="label-rating text-muted">By {{item.manufacturer}}</small>
+          <small class="label-rating text-success"> <i class="fa fa-clipboard-check"></i> {{item.quantity}}
+            available </small>
+        </div> <!-- rating-wrap.// -->
+        <div class="mb-3">
+          <var class="price h4">${{item.price}}</var>
+        </div> <!-- price-detail-wrap .// -->
+        <p>{{item.description}}</p>
+        <hr>
+        <div class="form-row">
+          <div class="form-group col-md flex-grow-0">
+            <label>Quantity</label>
+            <div class="input-group mb-3 input-spinner">
+              <div class="input-group-prepend">
+                <button class="btn btn-light" type="button" id="button-plus"> + </button>
+              </div>
+              <input type="text" class="form-control" value="1">
+              <div class="input-group-append">
+                <button class="btn btn-light" type="button" id="button-minus"> − </button>
+              </div>
+            </div>
+          </div> <!-- col.// -->
+        </div> <!-- row.// -->
+
+        <a href="/confirm/{{item.id}}" class="btn  btn-primary"> Buy now </a>
+        <a href="#" class="btn  btn-outline-primary"> <span class="text">Add to cart</span> <i
+            class="fas fa-shopping-cart"></i> </a>
+      </article> <!-- product-info-aside .// -->
+    </main> <!-- col.// -->
+  </div> <!-- row.// -->
+</div> <!-- card.// -->
+
+
+{% endblock %}

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>ML Academy - Retail store app</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+        integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link rel="stylesheet" href="{{ url_for('static', filename='css/ui.css') }}">
+</head>
+
+<body>
+
+    <header class="main-header fixed-top">
+        <nav
+            class="navbar navbar-light bg-white border-bottom navbar-expand justify-content-between flex-column flex-lg-row">
+
+            <a href="/" class="navbar-brand">
+                ML Academy Store
+            </a>
+
+            <div class="navbar-top-wrap" id="navbarNavDropdown">
+                <ul class="nav nav-header">
+                    <li class="nav-item {% block home %}{% endblock %}">
+                        <a class="nav-link" href="/">Home</a>
+                    </li>
+                    <li class="nav-item {% block users %}{% endblock %}">
+                        <a class="nav-link" href="/users">Users</a>
+                    </li>
+                    <li class="nav-item {% block orders %}{% endblock %}">
+                        <a class="nav-link" href="/orders">Orders</a>
+                    </li>
+                    <li class="nav-item  {% block addproduct %}{% endblock %}">
+                        <a class="nav-link" href="/items/add">Add Product</a>
+                    </li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <section class="section-components padding-y mt-5">
+    <div class="container mb-3">
+        {% block content %}{% endblock %}
+    </div>
+</section>
+</body>
+
+</html>

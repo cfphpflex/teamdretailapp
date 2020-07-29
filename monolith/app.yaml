@@ -1,0 +1,3 @@
+runtime: python37
+env_variables: 
+  SENDGRID_API_KEY: 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

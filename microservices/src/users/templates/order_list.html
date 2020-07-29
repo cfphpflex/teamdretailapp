@@ -1,0 +1,22 @@
+{% extends "base.html" %}
+{% block order %}active{% endblock %}
+{% block content %}
+<table class="table table-bordered">
+    <thead>
+        <tr>
+            <th scope="col">Item Id</th>
+            <th scope="col">User Id</th>
+            <th scope="col">Units</th>
+        </tr>
+    </thead>
+    <tbody>
+        {% for order in orders %}
+        <tr>
+            <td>{{ order.item_id }}</td>
+            <td>{{ order.user_id }}</td>
+            <td>{{ order.units }}</td>
+        </tr>
+        {% endfor %}
+    </tbody>
+</table>
+{% endblock %}
