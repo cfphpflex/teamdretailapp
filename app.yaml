@@ -1,3 +1,22 @@
-runtime: python37
-env_variables: 
-  SENDGRID_API_KEY: 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
+# ***GLORIA DEFELIX COMMENTING OUT THESE NEXT 3 LINES:
+# runtime: python37
+# env_variables: 
+#  SENDGRID_API_KEY: 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
+
+# ***GLORIA DEFELIX ADDING FOLLOWING SECTION***
+# REFERENCE: "Deploying a Python Flask Site" https://google.qwiklabs.com/focuses/3339?parent=catalog
+# Replace <your-cloud-storage-bucket> with the name of your Cloud Storage bucket. 
+# (If you forgot the name of your Cloud Storage bucket, copy the GCP Project ID from the Qwiklabs tab). 
+# The env_variables section sets up environment variables that will be used in main.py once the application is deployed.
+# This is the basic configuration needed to deploy a Python 3 App Engine Flex application. 
+
+runtime: python
+env: flex
+entrypoint: gunicorn -b :$PORT main:app
+
+runtime_config:
+    python_version: 3
+
+#GLORIA DEFELIX Changed "dashes" / "-" to "Underscores" / "_" for the "<your_cloud_storage_bucket> variable (Colab was throwing an error)
+env_variables:
+    CLOUD_STORAGE_BUCKET: <your_cloud_storage_bucket>
