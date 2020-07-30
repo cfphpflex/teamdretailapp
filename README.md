@@ -18,7 +18,14 @@ cd monolith-to-microservices
 
 #### To run the monolith project use the following commands from the top level directory:
 
-```
+``
+Monolith App deployment on Kubernetes: expose ip
+
+FIXES: main.py
+must run python3 main.py
+add index.html
+MUST replace project name change deployment project name
+``
 cd monolith
 npm start
 ```
